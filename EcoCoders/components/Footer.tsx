@@ -6,15 +6,19 @@ import * as Linking from 'expo-linking';
 import styles from './GlobalStyle.js';
 
 
-export default function Header() {
+export default function Footer() {
   return (
-    <SafeAreaView style={styles.layout}>
+    <SafeAreaView style={styles.footer}>
         <View>
-            <Link href="http://maps.google.com/">LOCATION</Link>
+            <Link href="/">HOME</Link>
         </View>
-        <Text style={{fontSize: 30, fontWeight: 900, textAlign: 'center', color: '#D9D9D9'}}>Home</Text>
+        
+        <View style={styles.buddy}>
+            <Link href="/">BUDDY</Link>
+        </View>
+
         <View>
-            <Link href="http://maps.google.com/">SETTINGS</Link>
+            <Link href="/">PROFILE</Link>
         </View>
     </SafeAreaView>
   );

@@ -13,33 +13,56 @@ export default StyleSheet.create({
     },
 
     layout: {
+        paddingTop: 150,
+        paddingBottom: 150,
         display: 'flex',
-        justifyContent: "center",
-        gap: 25,
+        gap: 20,
         alignItems: "center",
         backgroundColor: "#BDC499",
         height: "100%",
+        width: '100%',
     },
 
     loginBox: {
         display: 'flex',
         gap: 20,
         backgroundColor: '#BDC499',
+        alignItems: 'center',
         width: 300,
         height: 400,
         borderRadius: 20,
-        padding: 20,
-        paddingTop: 50,
+        padding: 10,
+        paddingTop: 25,
     },
 
-    userNameBox: {
+    usernameBox: {
         backgroundColor: '#D9D9D9',
-        color: 'green',
-        width: 250,
+        color: 'black',
+        width: 260,
         height: 40,
         borderRadius: 15,
         padding: 10,
-        marginBottom: 20
+    },
+
+    passwordBox: {
+        backgroundColor: '#D9D9D9',
+        color: 'black',
+        width: 260,
+        height: 40,
+        borderRadius: 15,
+        padding: 10,
+    },
+
+    loginButton:
+    {
+        backgroundColor: '#D9D9D9',
+        color: '#3B2828',
+        width: 150,
+        height: 40,
+        borderRadius: 15,
+        padding: 10,
+        textAlign: 'center',
+
     },
 
     title: {
@@ -53,9 +76,8 @@ export default StyleSheet.create({
         fontSize: 25, 
         fontWeight: 800, 
         textAlign: 'left', 
-        // alignSelf: 'start',
         color: '#3B2828',
-        marginLeft: 50
+        marginLeft: 25
     },
 
     link: {

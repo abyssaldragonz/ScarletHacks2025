@@ -1,43 +1,57 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { StyleSheet, View, Text, SafeAreaView, ScrollView} from "react-native";
 import { Link, Stack } from 'expo-router';
 import styles from './Style.js';
 
 import Header from '../components/Header';
 import TaskBox from '../components/TaskBox';
+import Footer from '../components/Footer';
 
 export interface TaskObject {
-    name: string;
+    name: string,
+    points: number,
+    done: boolean
+    
 };
 
 
 const exampleTask : TaskObject = {
-    name: "TASK ONE"
+    name: "TASK ONE",
+    points: 25,
+    done: true
 }
 
 const exampleTask2 : TaskObject = {
-    name: "TASK TWO"
+    name: "TASK TWO",
+    points: 15,
+    done: false
 }
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.layout}>
         <Header />
-        <Text style={styles.header}>Tasks</Text>
+        <ScrollView>
+            <Text style={styles.header}>Tasks</Text>
 
-        <TaskBox task={exampleTask}></TaskBox>
-        <TaskBox task={exampleTask2}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask}></TaskBox>
+            <TaskBox task={exampleTask2}></TaskBox>
 
-        <Link href="/" style={styles.link}>
-            Go to Index screen
-        </Link>
+            <Link href="/" style={styles.link}>
+                Go to Index screen
+            </Link>
 
-        <Link href="/login" style={styles.link}>
-            Go to Login screen
-        </Link>
-        
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-        <Text>HELLO WORLD!TEST2</Text>
+            <Link href="/login" style={styles.link}>
+                Go to Login screen
+            </Link>
+            
+        </ScrollView>
+        <Footer />
     </SafeAreaView>
   );
 }
