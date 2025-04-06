@@ -39,7 +39,7 @@ export default function Signup() {
       await AsyncStorage.setItem('registeredUsers', JSON.stringify(users));
 
       Alert.alert('Account created! You can now log in.');
-      router.replace('/login');
+      router.replace('/');
     } catch (e) {
       console.error('Signup error:', e);
       Alert.alert('Something went wrong. Please try again.');
@@ -82,7 +82,7 @@ export default function Signup() {
         />
 
         <Pressable style={styles.loginButton} onPress={handleSignup}>
-          <Text style={{ color: 'white', textAlign: 'center', fontWeight: '600' }}>Create Account</Text>
+          <Text style={{ textAlign: 'center', fontWeight: '600', alignSelf: 'center', color: '#3B2828' }}>Create Account</Text>
         </Pressable>
       </View>
     </SafeAreaView>

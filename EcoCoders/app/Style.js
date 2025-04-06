@@ -64,6 +64,7 @@ export default StyleSheet.create({
         display: 'flex',
         gap: 20,
         backgroundColor: '#BDC499',
+        justifyContent: 'center',
         alignItems: 'center',
         width: 300,
         height: 400,
@@ -98,6 +99,7 @@ export default StyleSheet.create({
         height: 40,
         borderRadius: 15,
         textAlign: 'center',
+        justifyContent: 'center'
     },
 
     // Home Page
