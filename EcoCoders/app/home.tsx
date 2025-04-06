@@ -10,27 +10,37 @@ import Footer from '../components/Footer';
 export interface TaskObject {
     name: string,
     points: number,
+    description: string,
     done: boolean
     
+};
+
+export interface GoalObject {
+    name: string,
+    points: number,
+    description: string,
+    percent: number
 };
 
 
 const exampleTask : TaskObject = {
     name: "TASK ONE",
     points: 25,
+    description: "some placeholder description for task one",
     done: true
 }
 
 const exampleTask2 : TaskObject = {
     name: "TASK TWO",
     points: 15,
+    description: "some other description for task two",
     done: false
 }
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.layout}>
-        <Header />
+        <Header name={"Home"} />
         <ScrollView>
             <Text style={styles.header}>Tasks</Text>
 

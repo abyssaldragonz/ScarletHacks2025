@@ -60,9 +60,7 @@ export default StyleSheet.create({
         width: 150,
         height: 40,
         borderRadius: 15,
-        padding: 10,
         textAlign: 'center',
-
     },
 
     title: {
@@ -75,6 +73,14 @@ export default StyleSheet.create({
     header: {
         fontSize: 25, 
         fontWeight: 800, 
+        textAlign: 'left', 
+        color: '#3B2828',
+        marginLeft: 25
+    },
+
+    subheader: {
+        fontSize: 15, 
+        fontWeight: 500, 
         textAlign: 'left', 
         color: '#3B2828',
         marginLeft: 25

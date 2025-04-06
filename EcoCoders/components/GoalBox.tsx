@@ -3,22 +3,24 @@ import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 import { Link, Stack } from 'expo-router';
 import styles from './TaskBoxStyle.js';
 
-import { TaskObject } from '../app/home.js';
+import { GoalObject } from '../app/home.js';
 
-export default function GoalBox(props:{task:TaskObject}) {
-  return (
-    <SafeAreaView style={styles.layout}>
-        <View style={styles.textCol}>
-            <Text style={{color: '#3B2828', fontSize: 20, fontWeight: 700}}>{props.task.name}</Text>
-            <Text style={{color: '#3B2828', fontSize: 15, fontWeight: 500}}>{props.task.points} EXP</Text>
-        </View>
-        {props.task.done && (
-            <View style={{borderRadius: 75/2, width: 75, height: 75, backgroundColor: '#B5C26B'}} />
-        )}
+export default function GoalBox(props:{goal:GoalObject}) {
+    return (
+        <SafeAreaView style={styles.layout}>
+            <View style={styles.textCol}>
+                <Text style={{color: '#3B2828', fontSize: 20, fontWeight: 700}}>{props.goal.name}</Text>
+                <Text style={{color: '#3B2828', fontSize: 15, fontWeight: 500}}>{props.goal.points} EXP per % done</Text>
 
-        {!props.task.done && (
-            <View style={{borderRadius: 75/2, width: 75, height: 75, backgroundColor: '#D1B566'}} />
-        )}
-    </SafeAreaView>
-  );
+                <View style={styles.progressBar}>
+                    <View style={styles.completedBar}>
+
+
+                    </View>
+                </View>
+            
+            </View>
+            
+        </SafeAreaView>
+    );
 }

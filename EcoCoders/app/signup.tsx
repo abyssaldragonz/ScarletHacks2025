@@ -17,7 +17,6 @@ export default function Signup() {
             <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Re-enter Password" placeholderTextColor={"#3B2828"} />
             <Text style={styles.loginButton}>Create Account</Text>
         </View>
-        <Text>HELLO WORLD!TEST3</Text>
     </SafeAreaView>
   );
 }
