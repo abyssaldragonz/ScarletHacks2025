@@ -3,58 +3,58 @@
     [
         {
             "id": 0,
-            "name": "Task ZERO",
+            "name": "Buy Second Hand",
             "points": 100,
-            "description": "Short description for task zero",
+            "description": "Minimiz waste and save ",
             "done": false
         },
         {
             "id": 1,
-            "name": "Task One",
+            "name": "Take a Walk",
             "points": 15,
             "description": "Short description for task one",
             "done": false
         },
         {
             "id": 2,
-            "name": "Task Two",
+            "name": "Compost",
             "points": 25,
-            "description": "Short description for task two",
+            "description": "Reduce landfill waste by properly composting scraps into valuable nutrients for your garden!",
             "done": false
         },
         {
             "id": 3,
-            "name": "Task Three",
+            "name": "Enjoy the Sun",
             "points": 5,
-            "description": "Short description for task three",
+            "description": "Save energy by going outside. Don't forget sunscreen!",
             "done": false
         },
         {
             "id": 4,
-            "name": "Task Four",
+            "name": "Support Native Species",
             "points": 55,
-            "description": "Short description for task four",
+            "description": "Plant native plants and prevent invasive species from overpopulating!",
             "done": false
         },
         {
             "id": 5,
-            "name": "Task Five",
+            "name": "Donate to Park",
             "points": 105,
-            "description": "Short description for task five",
+            "description": "Donating to conservation parks help them and their efforts to conserve native habitats and encourage education",
             "done": false
         },
         {
             "id": 6,
-            "name": "Task Six",
+            "name": "Visit Conservation Park",
             "points": 70,
-            "description": "Short description for task six",
+            "description": "Learn more about what the parks do and how you can be involved in their conservation efforts!",
             "done": false
         },
         {
             "id": 7,
-            "name": "Task Seven",
+            "name": "Support Community",
             "points": 35,
-            "description": "Short description for task seven",
+            "description": "Be involved with your community by caring for a garden together!",
             "done": false
         }
     ],

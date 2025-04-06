@@ -26,7 +26,7 @@ export default function TaskBox(props:{task:TaskObject}) {
             <SafeAreaView style={styles.layout} id={props.task.name}>
                 <View style={styles.compactLayout}>
                     <View style={styles.textCol}>
-                        <Text style={styles.header}>{props.task.name}</Text>
+                        <Text style={[styles.header, {flexWrap: 'wrap'}]}>{props.task.name}</Text>
                         <Text style={styles.subheader}>{props.task.points} EXP</Text>
                     </View>
 
