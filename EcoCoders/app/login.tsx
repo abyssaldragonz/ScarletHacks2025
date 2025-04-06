@@ -13,16 +13,13 @@ export default function Login() {
   const {signIn, userToken, userProfile} = useContext(AuthContext);
   const router = useRouter();
 
-  useEffect(() => {
-    if (userToken) // we can do token logic here(see if its already taken)
-      router.replace('/home'); // Redirect if already logged in
-  }, [userToken]);
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
-  //testing persistence
+  //check if user is logged in if so, redirect to home page
   useEffect(() => {
-    if (userToken) {
-      console.log('Logged in as:', userProfile?.username);
-    }
+    if (userToken)
+      router.replace('/home');
   }, [userToken]);
 
   return (
@@ -33,10 +30,10 @@ export default function Login() {
 
         <View style={styles.loginBox}>
             <Text style={{color:'#3B2828', fontSize: 30, fontWeight: 800, textAlign: 'center', marginTop: 60, marginBottom: 10}}>Log In</Text>
-            <TextInput style={styles.usernameBox} placeholder = "Username" placeholderTextColor={"#3B2828"} />
-            <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Password" placeholderTextColor={"#3B2828"} />
+            <TextInput style={styles.usernameBox} placeholder = "Username" value={username} onChangeText={setUsername} placeholderTextColor={"#3B2828"} />
+            <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Password" value={password} onChangeText={setPassword} placeholderTextColor={"#3B2828"} />
             <View style={styles.loginButton}>
-              <Button title="Log In" color = 'black' onPress={() => {signIn()}}/>
+              <Button title="Log In" color = 'black' onPress={() => {signIn(username, password)}}/>
             </View>
             
             <Link style={{color: '#3B2828'}} href="/signup">Create Account</Link>

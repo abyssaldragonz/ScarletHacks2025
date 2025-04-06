@@ -1,5 +1,6 @@
-import React, { useContext } from 'react';
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import React, { useContext, useEffect } from 'react';
+import { View, Text, Button, SafeAreaView, ScrollView } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import { Image } from 'expo-image';
 import styles from './Style.js';
 
@@ -42,7 +43,13 @@ const toppi : ProfileObject = {
 }
 
 export default function Profile() {
-const { userProfile } = useContext(AuthContext);
+const { userProfile, logout, userToken } = useContext(AuthContext);
+
+const router = useRouter();
+useEffect(() => {
+    if (!userToken)
+      router.replace('./login');
+  }, [userToken]);
 
     return (
         <SafeAreaView style={styles.layout}>
@@ -66,6 +73,9 @@ const { userProfile } = useContext(AuthContext);
                         <Text style={styles.subheader}>@{userProfile?.username ?? "username"}</Text>
                         <Text style={styles.subheader}># Friends</Text>
                         <Text style={{textAlign: 'center', width: '100%', fontSize: 15, fontWeight: 700, backgroundColor: '#D9D9D9', borderRadius: 7, marginTop: 5, paddingTop: 10, paddingBottom: 10}}>Edit Profile</Text>
+                        <View style={styles.loginButton}>
+                            <Button title="Sign Out" color = 'black' onPress={() => {logout()}}/>
+                        </View>
                     </View>
                 </View>
 
