@@ -10,12 +10,19 @@ interface AccountProfile {
 }
 
 export default function Login() {
-  const {signIn, userToken} = useContext(AuthContext);
+  const {signIn, userToken, userProfile} = useContext(AuthContext);
   const router = useRouter();
 
   useEffect(() => {
     if (userToken) // we can do token logic here(see if its already taken)
       router.replace('/home'); // Redirect if already logged in
+  }, [userToken]);
+
+  //testing persistence
+  useEffect(() => {
+    if (userToken) {
+      console.log('Logged in as:', userProfile?.username);
+    }
   }, [userToken]);
 
   return (

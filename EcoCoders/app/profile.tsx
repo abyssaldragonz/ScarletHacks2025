@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { Image } from 'expo-image';
 import styles from './Style.js';
@@ -6,6 +6,9 @@ import styles from './Style.js';
 import Header from '../components/Header';
 import LeaderboardProfile from '../components/LeaderboardProfiles';
 import Footer from '../components/Footer';
+
+//login/profile stuff
+import { AuthContext } from './AuthContext';
 
 const blurhash =
     '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
@@ -39,9 +42,11 @@ const toppi : ProfileObject = {
 }
 
 export default function Profile() {
+const { userProfile } = useContext(AuthContext);
+
     return (
         <SafeAreaView style={styles.layout}>
-            <Header name={"My Profile"} />
+            <Header name={userProfile?.username ?? "My Profile"} />
             <ScrollView style={{paddingLeft: 25}}>
                 {/* Top Portion */}
                 <View style={{display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-around', gap: 25}}>
@@ -57,8 +62,8 @@ export default function Profile() {
 
                     {/* Information */}
                     <View style={styles.profileHeader}>
-                        <Text style={styles.header}>Display Name</Text>
-                        <Text style={styles.subheader}>@username</Text>
+                        <Text style={styles.header}>{userProfile?.username ?? "Display Name"}</Text>
+                        <Text style={styles.subheader}>@{userProfile?.username ?? "username"}</Text>
                         <Text style={styles.subheader}># Friends</Text>
                         <Text style={{textAlign: 'center', width: '100%', fontSize: 15, fontWeight: 700, backgroundColor: '#D9D9D9', borderRadius: 7, marginTop: 5, paddingTop: 10, paddingBottom: 10}}>Edit Profile</Text>
                     </View>
