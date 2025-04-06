@@ -44,7 +44,7 @@ export default function TaskBox(props:{task:TaskObject}) {
                 </View>
 
                 {taskOpened && (
-                    <Text style={{ padding: 10 }}>{props.task.description}</Text>
+                    <Text style={{ padding: 10, alignSelf: 'flex-start' }}>{props.task.description}</Text>
                 )}
             </SafeAreaView>
         </TouchableOpacity>

@@ -18,7 +18,7 @@ export default function GoalBox(props:{goal:GoalObject}) {
 
                 {/* Open the task when the state is set to one */}
                 {(taskOpened == 1) &&
-                    <Text>
+                    <Text style={{alignSelf: 'flex-start'}}>
                         {props.goal.description}
                     </Text>
                 }

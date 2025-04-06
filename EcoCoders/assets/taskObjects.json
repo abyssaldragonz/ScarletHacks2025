@@ -5,14 +5,14 @@
             "id": 0,
             "name": "Buy Second Hand",
             "points": 100,
-            "description": "Minimiz waste and save ",
+            "description": "Minimize waste and save money!",
             "done": false
         },
         {
             "id": 1,
             "name": "Take a Walk",
             "points": 15,
-            "description": "Short description for task one",
+            "description": "Touch some grass...please...",
             "done": false
         },
         {
@@ -63,23 +63,23 @@
     [
         {
             "id": 0,
-            "name": "Community Goal ZERO",
+            "name": "50 lbs of litter picked up",
             "points": 20,
-            "description": "Short description for community goal zero",
+            "description": "We believe in you!",
             "percent": 50
         },
         {
             "id": 1,
-            "name": "Community Goal One",
+            "name": "Plant 100 trees",
             "points": 10,
-            "description": "Short description for community goal one",
+            "description": "Your children will thank you!",
             "percent": 5
         },
         {
             "id": 2,
-            "name": "Community Goal Two",
+            "name": "Raise 200 dollars",
             "points": 5,
-            "description": "Short description for community goal two",
+            "description": "Donate to Garfield Park Conservatory!",
             "percent": 15
         }
     ]
