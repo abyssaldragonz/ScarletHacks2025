@@ -57,7 +57,9 @@ export default StyleSheet.create({
         backgroundColor: '#3B2828',
         maxWidth: 350,
         minWidth: '0%',
-        maxWidth: '90%',
+        maxWidth: '100%',
+        height: 20,
+        borderRadius: 7
     },
 
     header: {

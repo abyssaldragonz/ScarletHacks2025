@@ -121,7 +121,7 @@ export default StyleSheet.create({
     // Buddy Page
     buddyImage: {
         height: 300,
-        marginBottom: 10
+        marginBottom: 10,
     },
 
     buddyBonusContainer: {

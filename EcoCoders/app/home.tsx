@@ -39,7 +39,7 @@ const exampleTask2 : TaskObject = {
 const exampleGoal : GoalObject = {
     name: "Community goal!",
     points: 5,
-    description: "aaaaaa",
+    description: "aaaaaa we have a community goal to fulfill!! some short description here!",
     percent: 15
 }
 

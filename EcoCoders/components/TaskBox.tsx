@@ -11,7 +11,7 @@ export default function TaskBox(props:{task:TaskObject}) {
     const openPopup = () => setCount(taskOpened => taskOpened * -1);
 
     return (
-        <TouchableOpacity onPress={openPopup}> {/* Every time we press on the task, it expands it */}
+        <TouchableOpacity onPress={openPopup}>{/* Every time we press on the task, it expands it */}
             <SafeAreaView style={styles.layout} id={props.task.name}>
                 <View style={styles.compactLayout}>
                     <View style={styles.textCol}>
