@@ -21,11 +21,11 @@ interface BuddyProfile {
 
 const placeholderBuddy : BuddyProfile = {
     name: "Scrunkly Scrimblo",
-    species: "Roly Poly",
+    species: "Rat",
     hat: require("../assets/images/buddy/dapper.webp"),
     food: require("../assets/images/buddy/lollipop.webp"),
     level: 99,
-    exp: 99,
+    exp: 150,
 }
 
 // Function to make sure Buddy stays the same upon page reload
@@ -44,6 +44,10 @@ export default function Buddy(bud : BuddyProfile) {
     const [foodType, setFood] = useState(require("../assets/images/buddy/lollipop.webp"));
     const changeFood = (newFood:string) => setFood((foodType:string) => newFood);
     bud.food = foodType;
+
+    const [buddyType, setBuddy] = useState("Rat");
+    const changeBuddy = (newBuddy:string) => setBuddy((buddyType:string) => newBuddy);
+    bud.species = buddyType;
     
     return (
         <SafeAreaView style={styles.layout}>
@@ -115,7 +119,7 @@ export default function Buddy(bud : BuddyProfile) {
                 { bud.species.toLowerCase() == "roly poly" && (
                     <View>
                         <Image
-                            style={{margin: -125, position: 'relative', alignSelf: 'center', height: 250, minWidth: 250, bottom: -50, right: 50, zIndex: 50}}
+                            style={{margin: -125, position: 'relative', alignSelf: 'center', height: 250, minWidth: 250, bottom: -50, right: 35, zIndex: 50}}
                             source={bud.hat}
                             placeholder={{ blurhash }}
                             contentFit="contain"
@@ -250,8 +254,37 @@ export default function Buddy(bud : BuddyProfile) {
                 <View style={{padding: 25}}></View>
                 <Text style={styles.subheader}>Change Buddy</Text>
                 <View style={styles.buddyBonusContainer}>
+                    <TouchableOpacity onPress={() => changeBuddy("Rat")}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/images/buddy/scrunkly.gif")}
+                            placeholder={{ blurhash }}
+                            contentFit="cover"
+                            transition={1000}
+                            alt="Bone"
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => changeBuddy("Snake")}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/images/buddy/scrimblo.gif")}
+                            placeholder={{ blurhash }}
+                            contentFit="cover"
+                            transition={1000}
+                            alt="Bone"
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => changeBuddy("Roly Poly")}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/images/buddy/scrunkle.gif")}
+                            placeholder={{ blurhash }}
+                            contentFit="cover"
+                            transition={1000}
+                            alt="Bone"
+                        />
+                    </TouchableOpacity>
 
-                    
                 </View>
 
             </ScrollView>
