@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { StyleSheet, View, Button, Text, SafeAreaView, TextInput } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import styles from './Style.js';
 
 import { AuthContext } from './AuthContext';
@@ -10,7 +10,14 @@ interface AccountProfile {
 }
 
 export default function Login() {
-  // signIn = useContext(AuthContext);
+  const {signIn, userToken} = useContext(AuthContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (userToken) // we can do token logic here(see if its already taken)
+      router.replace('/home'); // Redirect if already logged in
+  }, [userToken]);
+
   return (
     <SafeAreaView style={styles.landing}>
         <Link href="/" style={styles.link}>
@@ -22,7 +29,7 @@ export default function Login() {
             <TextInput style={styles.usernameBox} placeholder = "Username" placeholderTextColor={"#3B2828"} />
             <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Password" placeholderTextColor={"#3B2828"} />
             <View style={styles.loginButton}>
-              {/* <Button title="Log In" color = 'black' onPress={() => {signIn()}}/> */}
+              <Button title="Log In" color = 'black' onPress={() => {signIn()}}/>
             </View>
             
             <Link style={{color: '#3B2828'}} href="/signup">Create Account</Link>
