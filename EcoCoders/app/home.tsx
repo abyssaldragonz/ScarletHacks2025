@@ -5,6 +5,7 @@ import styles from './Style.js';
 
 import Header from '../components/Header';
 import TaskBox from '../components/TaskBox';
+import GoalBox from '../components/GoalBox';
 import Footer from '../components/Footer';
 
 export interface TaskObject {
@@ -37,6 +38,13 @@ const exampleTask2 : TaskObject = {
     done: false
 }
 
+const exampleGoal : GoalObject = {
+    name: "community goal woah",
+    points: 5,
+    description: "aaaaaa",
+    percent: 15
+}
+
 export default function Home() {
   return (
     <SafeAreaView style={styles.layout}>
@@ -52,14 +60,11 @@ export default function Home() {
             <TaskBox task={exampleTask}></TaskBox>
             <TaskBox task={exampleTask2}></TaskBox>
 
-            <Link href="/" style={styles.link}>
-                Go to Index screen
-            </Link>
 
-            <Link href="/login" style={styles.link}>
-                Go to Login screen
-            </Link>
-            
+            <Text style={styles.header}>Community Goals</Text>
+
+            <GoalBox goal={exampleGoal}></GoalBox>
+
         </ScrollView>
         <Footer />
     </SafeAreaView>

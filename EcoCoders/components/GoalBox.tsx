@@ -8,9 +8,9 @@ import { GoalObject } from '../app/home.js';
 export default function GoalBox(props:{goal:GoalObject}) {
     return (
         <SafeAreaView style={styles.layout}>
-            <View style={styles.textCol}>
+            <View style={styles.textRow}>
                 <Text style={{color: '#3B2828', fontSize: 20, fontWeight: 700}}>{props.goal.name}</Text>
-                <Text style={{color: '#3B2828', fontSize: 15, fontWeight: 500}}>{props.goal.points} EXP per % done</Text>
+                <Text style={{color: '#3B2828', fontSize: 15, fontWeight: 500}}>{props.goal.percent}% there!</Text>
 
                 <View style={styles.progressBar}>
                     <View style={styles.completedBar}>
@@ -18,7 +18,7 @@ export default function GoalBox(props:{goal:GoalObject}) {
 
                     </View>
                 </View>
-            
+                <Text style={{color: '#3B2828', fontSize: 15, fontWeight: 500}}>{props.goal.points} EXP per % done</Text>
             </View>
             
         </SafeAreaView>

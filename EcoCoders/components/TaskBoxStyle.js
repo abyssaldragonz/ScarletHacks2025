@@ -32,6 +32,12 @@ export default StyleSheet.create({
         justifyContent: "center",
     },
 
+    textRow: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: "center",
+    },
+
     progressBar: {
         backgroundColor: '#F3F3F3',
     },
