@@ -61,7 +61,7 @@ export default function Buddy(bud:BuddyProfile) {
                     />
                 )}
 
-
+                {/* EXP */}
                 <View style={styles.progressBar}>
                     <View style={styles.completedBar}></View>
                 </View>
@@ -69,6 +69,7 @@ export default function Buddy(bud:BuddyProfile) {
                     {1000-bud.exp} EXP to the next level
                 </Text>
 
+                {/* Fun Bonus Stuff */}
                 <View style={{padding: 10}}></View>
                 <Text style={{textAlign: 'center', width: '75%', fontSize: 15, fontWeight: 700, backgroundColor: '#D9D9D9', borderRadius: 7, margin: 10, padding: 5, alignSelf: 'center'}}>Claim rewards in store!</Text>
 
@@ -108,8 +109,8 @@ export default function Buddy(bud:BuddyProfile) {
                     />
                 </View>
 
-                <View style={{padding: 20}}></View>
 
+                <View style={{padding: 20}}></View>
                 <Text style={styles.subheader}>Feed Buddy</Text>
                 <View style={styles.buddyBonusContainer}>
                     <Image

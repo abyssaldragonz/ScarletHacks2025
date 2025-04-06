@@ -1,7 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, Button } from "react-native";
-import { Link, Stack } from 'expo-router';
-import * as Linking from 'expo-linking';
+import { View, Text, SafeAreaView } from "react-native";
+import { Link } from 'expo-router';
 
 import LocationIcon from '../assets/images/locationIcon';
 import SettingIcon from '../assets/images/settingIcon';

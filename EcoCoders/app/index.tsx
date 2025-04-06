@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { Text, SafeAreaView } from "react-native";
+import { Link } from 'expo-router';
 import styles from './Style.js';
 
 export default function Index() {

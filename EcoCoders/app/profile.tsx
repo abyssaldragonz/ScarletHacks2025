@@ -55,6 +55,7 @@ export default function Profile() {
                         alt="User Profile"
                     />
 
+                    {/* Information */}
                     <View style={styles.profileHeader}>
                         <Text style={styles.header}>Display Name</Text>
                         <Text style={styles.subheader}>@username</Text>
@@ -63,6 +64,7 @@ export default function Profile() {
                     </View>
                 </View>
 
+                {/* Recent Contributions */}
                 <View style={{padding: 20}}></View>
                 <Text style={styles.header}>Recent Contributions</Text>
                 <View style={styles.buddyBonusContainer}>
@@ -70,6 +72,7 @@ export default function Profile() {
 
                 </View>
 
+                {/* Leaderboard */}
                 <View style={{padding: 20}}></View>
                 <Text style={styles.header}>Leaderboard</Text>
                 <View style={styles.leaderboard}>

@@ -1,6 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { View, Text, SafeAreaView } from "react-native";
 import styles from './BoxStyle.js';
 
 import { GoalObject } from '../app/home.js';
