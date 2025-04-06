@@ -2,6 +2,7 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
+    // Global Pages
     landing: {
         flex: 1,
         display: 'flex',
@@ -21,8 +22,44 @@ export default StyleSheet.create({
         backgroundColor: "#BDC499",
         height: "100%",
         width: '100%',
+        flexWrap: 'wrap'
     },
 
+
+    title: {
+        fontSize: 30, 
+        fontWeight: 900, 
+        textAlign: 'center', 
+        color: '#D9D9D9'
+    },
+
+    header: {
+        fontSize: 25, 
+        fontWeight: 800, 
+        textAlign: 'left', 
+        color: '#3B2828',
+        // marginLeft: 25
+    },
+
+    subheader: {
+        fontSize: 15, 
+        fontWeight: 700, 
+        textAlign: 'left', 
+        color: '#5A4141',
+        // marginTop: 25
+    },
+
+    link: {
+        backgroundColor: 'white',
+        padding: 20
+    },
+
+    image: {
+        height: 100,
+        width: 100
+    },
+
+    // Login Page
     loginBox: {
         display: 'flex',
         gap: 20,
@@ -63,31 +100,54 @@ export default StyleSheet.create({
         textAlign: 'center',
     },
 
-    title: {
-        fontSize: 30, 
-        fontWeight: 900, 
-        textAlign: 'center', 
-        color: '#D9D9D9'
+    // Home Page
+    progressBar: {
+        backgroundColor: '#F3F3F3',
+        height: 20,
+        minWidth: '90%',
+        maxWidth: '90%',
+        borderRadius: 10,
+        alignSelf: 'center'
     },
 
-    header: {
-        fontSize: 25, 
-        fontWeight: 800, 
-        textAlign: 'left', 
-        color: '#3B2828',
-        marginLeft: 25
+    completedBar: {
+        backgroundColor: '#3B2828',
+        maxWidth: 350,
+        minWidth: '0%',
+        maxWidth: '90%',
+        borderRadius: 10
     },
 
-    subheader: {
-        fontSize: 15, 
-        fontWeight: 500, 
-        textAlign: 'left', 
-        color: '#3B2828',
-        marginLeft: 25
+    // Buddy Page
+    buddyImage: {
+        height: 300,
+        marginBottom: 10
     },
 
-    link: {
-        backgroundColor: 'white',
-        padding: 20
+    buddyBonusContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        gap: 10,
+    },
+
+    // Profile Page
+    profileHeader: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 5,
+    },
+
+    userImage: {
+        height: 150,
+        width: 150,
+        borderRadius: 75,
+        backgroundColor: '#D9D9D9'
+    },
+
+    leaderboard: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: -5,
     }
 });

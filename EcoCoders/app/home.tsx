@@ -13,7 +13,6 @@ export interface TaskObject {
     points: number,
     description: string,
     done: boolean
-    
 };
 
 export interface GoalObject {
@@ -39,7 +38,7 @@ const exampleTask2 : TaskObject = {
 }
 
 const exampleGoal : GoalObject = {
-    name: "community goal woah",
+    name: "Community goal!",
     points: 5,
     description: "aaaaaa",
     percent: 15
@@ -49,7 +48,7 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.layout}>
         <Header name={"Home"} />
-        <ScrollView>
+        <ScrollView style={{paddingLeft: 25}}>
             <Text style={styles.header}>Tasks</Text>
 
             <TaskBox task={exampleTask}></TaskBox>
@@ -60,7 +59,7 @@ export default function Home() {
             <TaskBox task={exampleTask}></TaskBox>
             <TaskBox task={exampleTask2}></TaskBox>
 
-
+            <View style={{padding: 25}} />
             <Text style={styles.header}>Community Goals</Text>
 
             <GoalBox goal={exampleGoal}></GoalBox>

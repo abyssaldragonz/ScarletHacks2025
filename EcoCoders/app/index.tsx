@@ -5,7 +5,7 @@ import styles from './Style.js';
 
 export default function Index() {
 	return (
-		<SafeAreaView style={styles.layout}>
+		<SafeAreaView style={styles.landing}>
 			<Text>WE ARE IN INDEX.TSX</Text>
 			<Link href="/home" style={styles.link}>
 				Go to Home screen
