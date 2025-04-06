@@ -6,9 +6,7 @@ import styles from './Style.js';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const blurhash =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-
+const blurhash = require("../assets/images/buddy/clear.webp");
 
 interface BuddyProfile {
     name: string,
@@ -37,6 +35,7 @@ function pageReload(event: Event) {
 
 export default function Buddy(bud : BuddyProfile) {
     bud = placeholderBuddy;
+    
     const [hatType, setHat] = useState(require("../assets/images/buddy/bow.webp"));
     const changeHat = (newHat:string) => setHat((hatType:string) => newHat);
     bud.hat = hatType;
@@ -51,7 +50,7 @@ export default function Buddy(bud : BuddyProfile) {
     
     return (
         <SafeAreaView style={styles.layout}>
-            <Header name={"BioBuddy"}/>
+            <Header name={"EcoPet"}/>
             <ScrollView style={{paddingLeft: 25}}>
                 <Text style={styles.header}>{bud.name}</Text>
                 <View style={{padding: 5}}></View>
@@ -63,7 +62,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, marginBottom: -75, position: 'relative', alignSelf: 'center', height: 250, minWidth: 250, bottom: 0, zIndex: 50}}
                             source={bud.hat}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="RatHat"
@@ -71,7 +70,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, position: 'relative', alignSelf: 'center', height: 150, minWidth: 150, bottom: -125, right: 25, zIndex: 50}}
                             source={bud.food}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="RatFood"
@@ -79,7 +78,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.buddyImage}
                             source={require("../assets/images/buddy/scrunkly.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="Scrunkly"
@@ -92,7 +91,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, marginBottom: -75, position: 'relative', alignSelf: 'center', height: 250, minWidth: 250, bottom: -10, right:20, zIndex: 50}}
                             source={bud.hat}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="SnakeHat"
@@ -100,7 +99,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, position: 'relative', alignSelf: 'center', height: 150, minWidth: 150, bottom: -150, right: 50, zIndex: 50}}
                             source={bud.food}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="SnakeFood"
@@ -108,7 +107,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.buddyImage}
                             source={require("../assets/images/buddy/scrimblo.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="Scrimblo"
@@ -121,7 +120,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, position: 'relative', alignSelf: 'center', height: 250, minWidth: 250, bottom: -50, right: 35, zIndex: 50}}
                             source={bud.hat}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="PolyHat"
@@ -129,7 +128,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={{margin: -125, position: 'relative', alignSelf: 'center', height: 150, minWidth: 150, bottom: -225, right: 75, zIndex: 50}}
                             source={bud.food}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="PolyFood"
@@ -137,7 +136,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.buddyImage}
                             source={require("../assets/images/buddy/scrunkle.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="contain"
                             transition={1000}
                             alt="Scrunkle"
@@ -145,9 +144,9 @@ export default function Buddy(bud : BuddyProfile) {
                     </View>
                 )}
 
-                {/* EXP */}
+                {/* Change progress bar completion */}
                 <View style={styles.progressBar}>
-                    <View style={styles.completedBar}></View>
+                    <View style={[styles.completedBar, {width: `${(bud).exp/10}%`}]}></View>
                 </View>
                 <Text style={{fontSize: 15, fontWeight: 700, textAlign: 'center', color: '#5A4141',}}>
                     {1000-bud.exp} EXP to the next level
@@ -164,7 +163,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/dapper.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Tophat"
@@ -174,7 +173,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/bow.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bowtie"
@@ -184,7 +183,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/monocle.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Monocle"
@@ -194,10 +193,20 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/bow2.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bow"
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => changeHat(require("../assets/images/buddy/clear.webp"))}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/images/buddy/remove.webp")}
+                            placeholder={blurhash}
+                            contentFit="cover"
+                            transition={1000}
+                            alt="REMOVE"
                         />
                     </TouchableOpacity>
                 </View>
@@ -211,7 +220,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/bone.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bone"
@@ -221,7 +230,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/carrot.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Carrot"
@@ -231,7 +240,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/muffin.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Muffin"
@@ -241,10 +250,20 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/lollipop.webp")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Lollipop"
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => changeFood(require("../assets/images/buddy/clear.webp"))}>
+                        <Image
+                            style={styles.image}
+                            source={require("../assets/images/buddy/remove.webp")}
+                            placeholder={blurhash}
+                            contentFit="cover"
+                            transition={1000}
+                            alt="REMOVE"
                         />
                     </TouchableOpacity>
                 </View>
@@ -258,7 +277,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/scrunkly.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bone"
@@ -268,7 +287,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/scrimblo.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bone"
@@ -278,7 +297,7 @@ export default function Buddy(bud : BuddyProfile) {
                         <Image
                             style={styles.image}
                             source={require("../assets/images/buddy/scrunkle.gif")}
-                            placeholder={{ blurhash }}
+                            placeholder={blurhash}
                             contentFit="cover"
                             transition={1000}
                             alt="Bone"

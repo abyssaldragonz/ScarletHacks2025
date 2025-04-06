@@ -1,22 +1,45 @@
-import React from 'react';
-import { Text, SafeAreaView } from "react-native";
-import { Link } from 'expo-router';
+import React, {useContext, useEffect} from 'react';
+import { StyleSheet, View, Button, Text, SafeAreaView, TextInput } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import styles from './Style.js';
 
-export default function Index() {
-	return (
-		<SafeAreaView style={styles.landing}>
-			<Text>WE ARE IN INDEX.TSX</Text>
-			<Link href="/home" style={styles.link}>
-				Go to Home screen
-			</Link>
+import { AuthContext } from './AuthContext.js';
 
-			<Link href="/login" style={styles.link}>
-				Go to Login screen
-			</Link>
+interface AccountProfile {
+    username: string
+}
 
-			<Text>Edit app/index.tsx to edit this screen.</Text>
-			<Text>HELLO WORLD!</Text>
-		</SafeAreaView>
-	);
+export default function Login() {
+  const {signIn, userToken, userProfile} = useContext(AuthContext);
+  const router = useRouter();
+
+  const [username, setUsername] = React.useState('');
+  const [password, setPassword] = React.useState('');
+
+  //check if user is logged in if so, redirect to home page
+  useEffect(() => {
+    if (userToken)
+      router.replace('/home');
+  }, [userToken]);
+
+  return (
+    <SafeAreaView style={styles.landing}>
+        <Link href="/" style={styles.link}>
+            Go to Index screen
+        </Link>
+
+        <View style={styles.loginBox}>
+            <Text style={{color:'#3B2828', fontSize: 30, fontWeight: 800, textAlign: 'center', marginTop: 60, marginBottom: 10}}>Log In</Text>
+            <TextInput style={styles.usernameBox} placeholder = "Username" value={username} onChangeText={setUsername} placeholderTextColor={"#3B2828"} />
+            <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Password" value={password} onChangeText={setPassword} placeholderTextColor={"#3B2828"} />
+            <View style={styles.loginButton}>
+              <Button title="Log In" color = 'black' onPress={() => {signIn(username, password)}}/>
+            </View>
+            
+            <Link style={{color: '#3B2828'}} href="/signup">Create Account</Link>
+        </View>
+
+
+    </SafeAreaView>
+  );
 }

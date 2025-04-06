@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import styles from './BoxStyle.js';
 
@@ -6,9 +6,20 @@ import { TaskObject } from '../app/home.js';
 import CheckmarkIcon from '../assets/images/checkmarkIcon';
 import ClockIcon from '../assets/images/clockIcon';
 
+import { AuthContext } from '../app/AuthContext';
+
+
 export default function TaskBox(props:{task:TaskObject}) {
-    const [taskOpened, setCount] = useState(-1);
-    const openPopup = () => setCount(taskOpened => taskOpened * -1);
+    const [taskOpened, setOpened] = useState(false);
+    const openPopup = () => setOpened(prev => !prev);
+
+    const { taskCompletion, setTaskCompletion, markTaskDone } = useContext(AuthContext);
+    const taskName = props.task.name;
+    const isDone = taskCompletion?.[taskName] ?? false;
+
+    const toggleTaskCompletion = () => {
+        markTaskDone(taskName, !isDone);
+    }
 
     return (
         <TouchableOpacity onPress={openPopup}>{/* Every time we press on the task, it expands it */}
@@ -19,27 +30,22 @@ export default function TaskBox(props:{task:TaskObject}) {
                         <Text style={styles.subheader}>{props.task.points} EXP</Text>
                     </View>
 
-                    {/* Finished task */}
-                    {props.task.done && (
-                        <View style={{borderRadius: 75/2, width: 75, height: 75, backgroundColor: '#9BB218'}}>
-                            <CheckmarkIcon />
+                    {/* Task status */}
+                    <TouchableOpacity onPress={toggleTaskCompletion}>
+                        <View style={{
+                            borderRadius: 75 / 2,
+                            width: 75,
+                            height: 75,
+                            backgroundColor: isDone ? '#9BB218' : '#E5BB48'
+                        }}>
+                            {isDone ? <CheckmarkIcon /> : <ClockIcon />}
                         </View>
-                    )}
-
-                    {/* Unfinished task */}
-                    {!props.task.done && (
-                        <View style={{borderRadius: 75/2, width: 75, height: 75, backgroundColor: '#E5BB48'}}>
-                            <ClockIcon />
-                        </View>
-                    )}
+                    </TouchableOpacity>
                 </View>
 
-                {/* Open the task when the state is set to one */}
-                {(taskOpened == 1) &&
-                    <Text>
-                        {props.task.description}
-                    </Text>
-                }
+                {taskOpened && (
+                    <Text style={{ padding: 10 }}>{props.task.description}</Text>
+                )}
             </SafeAreaView>
         </TouchableOpacity>
     );

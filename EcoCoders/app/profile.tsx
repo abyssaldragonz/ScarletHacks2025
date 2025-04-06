@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { View, Text, Button, SafeAreaView, ScrollView } from "react-native";
+import React, { useContext, useEffect, useState } from 'react';
+import { View, Text, Button, SafeAreaView, ScrollView, TextInput } from "react-native";
 import { Link, useRouter } from 'expo-router';
 import { Image } from 'expo-image';
 import styles from './Style.js';
@@ -11,8 +11,7 @@ import Footer from '../components/Footer';
 //login/profile stuff
 import { AuthContext } from './AuthContext';
 
-const blurhash =
-    '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+const blurhash = require("../assets/images/buddy/clear.webp");
 
 export interface ProfileObject {
     name: string,
@@ -43,13 +42,23 @@ const toppi : ProfileObject = {
 }
 
 export default function Profile() {
-const { userProfile, logout, userToken } = useContext(AuthContext);
+const { userProfile, logout, userToken, setName } = useContext(AuthContext);
+const [newName, setNewName] = useState(userProfile?.name ?? "");
+const [showNameInput, setShowNameInput] = useState(false);
 
 const router = useRouter();
 useEffect(() => {
     if (!userToken)
-      router.replace('./login');
-  }, [userToken]);
+      router.replace('/');
+    }, [userToken]);
+
+function changeName()
+{
+    if (showNameInput && newName.trim() !== "") {
+        setName(newName); // update only the display name
+      }
+      setShowNameInput(!showNameInput);
+}
 
     return (
         <SafeAreaView style={styles.layout}>
@@ -59,9 +68,8 @@ useEffect(() => {
                 <View style={{display: 'flex', flexDirection: 'row', alignContent: 'center', justifyContent: 'space-around', gap: 25}}>
                     <Image
                         style={styles.userImage}
-                        // source={require("/")}
-                        source = {{blurhash}}
-                        placeholder={{ blurhash }}
+                        source = {require("../assets/images/sprout.webp")}
+                        placeholder={blurhash}
                         contentFit="contain"
                         transition={1000}
                         alt="User Profile"
@@ -69,10 +77,21 @@ useEffect(() => {
 
                     {/* Information */}
                     <View style={styles.profileHeader}>
-                        <Text style={styles.header}>{userProfile?.username ?? "Display Name"}</Text>
+                        <Text style={styles.header}>{userProfile?.name ?? userProfile?.username}</Text>
                         <Text style={styles.subheader}>@{userProfile?.username ?? "username"}</Text>
                         <Text style={styles.subheader}># Friends</Text>
-                        <Text style={{textAlign: 'center', width: '100%', fontSize: 15, fontWeight: 700, backgroundColor: '#D9D9D9', borderRadius: 7, marginTop: 5, paddingTop: 10, paddingBottom: 10}}>Edit Profile</Text>
+                        {showNameInput && (
+                            <TextInput
+                                style={styles.usernameBox}
+                                placeholder="Insert new name"
+                                placeholderTextColor="#3B2828"
+                                value={newName}
+                                onChangeText={setNewName}
+                            />
+                        )}
+                        <View style={styles.loginButton}>
+                            <Button title="Change Name" color = 'black' onPress={() => {changeName()}}/>
+                        </View>
                         <View style={styles.loginButton}>
                             <Button title="Sign Out" color = 'black' onPress={() => {logout()}}/>
                         </View>
@@ -83,7 +102,30 @@ useEffect(() => {
                 <View style={{padding: 20}}></View>
                 <Text style={styles.header}>Recent Contributions</Text>
                 <View style={styles.buddyBonusContainer}>
-
+                    <Image
+                        style={{height: 100, width: 100}}
+                        source={require("../assets/images/image0.webp")}
+                        placeholder={blurhash}
+                        contentFit="cover"
+                        transition={1000}
+                        alt="Image0"
+                    />
+                    <Image
+                        style={{height: 100, width: 100}}
+                        source={require("../assets/images/image1.webp")}
+                        placeholder={blurhash}
+                        contentFit="cover"
+                        transition={1000}
+                        alt="Image1"
+                    />
+                    <Image
+                        style={{height: 100, width: 100}}
+                        source={require("../assets/images/image2.webp")}
+                        placeholder={blurhash}
+                        contentFit="cover"
+                        transition={1000}
+                        alt="Image2"
+                    />
 
                 </View>
 

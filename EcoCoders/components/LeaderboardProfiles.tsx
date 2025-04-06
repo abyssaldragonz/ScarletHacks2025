@@ -5,9 +5,7 @@ import styles from './BoxStyle.js';
 
 import { ProfileObject } from '../app/profile.js';
 
-const blurhash =
-  '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-
+const blurhash = require("../assets/images/buddy/clear.webp");
 
 export default function LeaderboardProfile(props:{person:ProfileObject}) {
     return (
@@ -20,7 +18,7 @@ export default function LeaderboardProfile(props:{person:ProfileObject}) {
                 <Image
                     style={{height: 55, width: 55, borderRadius: 55/2}}
                     source={require("../assets/images/buddy/scrimblo.gif")}
-                    placeholder={{ blurhash }}
+                    placeholder={blurhash}
                     contentFit="contain"
                     transition={1000}
                     alt="Scrimblo"

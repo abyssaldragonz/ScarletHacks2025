@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, SafeAreaView, Button } from "react-native";
 import { Link, Stack } from 'expo-router';
 
 import HomeIcon from '../assets/images/homeIcon';
+import EcoPetIcon from '../assets/images/ecopet';
 import ProfileIcon from '../assets/images/profileIcon';
 
 import styles from './GlobalStyle.js';
@@ -18,7 +19,9 @@ export default function Footer() {
         </View>
         
         <View style={styles.buddy}>
-            <Link href="/buddy">BUDDY</Link>
+            <Link href="/buddy" style={{width: 100, height: 100}}>
+                <EcoPetIcon />
+            </Link>
         </View>
 
         <View>

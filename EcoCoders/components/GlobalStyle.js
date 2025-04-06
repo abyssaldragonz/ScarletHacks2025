@@ -36,6 +36,7 @@ export default StyleSheet.create({
         borderRadius: 15,
         height: 150,
         width: 150,
-        padding: 35
+        padding: 10,
+        alignItems: 'center'
     }
 });

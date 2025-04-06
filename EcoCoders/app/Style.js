@@ -115,7 +115,8 @@ export default StyleSheet.create({
         maxWidth: 350,
         minWidth: '0%',
         maxWidth: '90%',
-        borderRadius: 10
+        borderRadius: 10,
+        height: 20,
     },
 
     // Buddy Page

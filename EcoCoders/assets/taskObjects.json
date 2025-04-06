@@ -1,0 +1,86 @@
+{
+    "tasks":
+    [
+        {
+            "id": 0,
+            "name": "Task ZERO",
+            "points": 100,
+            "description": "Short description for task zero",
+            "done": false
+        },
+        {
+            "id": 1,
+            "name": "Task One",
+            "points": 15,
+            "description": "Short description for task one",
+            "done": false
+        },
+        {
+            "id": 2,
+            "name": "Task Two",
+            "points": 25,
+            "description": "Short description for task two",
+            "done": false
+        },
+        {
+            "id": 3,
+            "name": "Task Three",
+            "points": 5,
+            "description": "Short description for task three",
+            "done": false
+        },
+        {
+            "id": 4,
+            "name": "Task Four",
+            "points": 55,
+            "description": "Short description for task four",
+            "done": false
+        },
+        {
+            "id": 5,
+            "name": "Task Five",
+            "points": 105,
+            "description": "Short description for task five",
+            "done": false
+        },
+        {
+            "id": 6,
+            "name": "Task Six",
+            "points": 70,
+            "description": "Short description for task six",
+            "done": false
+        },
+        {
+            "id": 7,
+            "name": "Task Seven",
+            "points": 35,
+            "description": "Short description for task seven",
+            "done": false
+        }
+    ],
+
+    "goals":
+    [
+        {
+            "id": 0,
+            "name": "Community Goal ZERO",
+            "points": 20,
+            "description": "Short description for community goal zero",
+            "percent": 50
+        },
+        {
+            "id": 1,
+            "name": "Community Goal One",
+            "points": 10,
+            "description": "Short description for community goal one",
+            "percent": 5
+        },
+        {
+            "id": 2,
+            "name": "Community Goal Two",
+            "points": 5,
+            "description": "Short description for community goal two",
+            "percent": 15
+        }
+    ]
+}

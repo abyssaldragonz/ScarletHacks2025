@@ -7,6 +7,9 @@ export const AuthProvider = ({children}) => {
     const [isLoading, setIsLoading] = React.useState(true);
     const [userToken, setUserToken] = React.useState(null);
     const [userProfile, setUserProfile] = React.useState(null);
+    const [showNameInput, setShowNameInput] = React.useState(null);
+    const [taskCompletion, setTaskCompletion] = React.useState({});
+
     
     const signIn = async (username, password) => {
         try {
@@ -27,7 +30,10 @@ export const AuthProvider = ({children}) => {
           }
       
           const fakeToken = 'dummy-auth-token';
-          const userProfile = { username };
+          const userProfile = {
+            username: existingUser.username,
+            name: existingUser.name || existingUser.username // fallback
+          };
       
           await AsyncStorage.setItem('userToken', fakeToken);
           await AsyncStorage.setItem('userProfile', JSON.stringify(userProfile));
@@ -72,12 +78,45 @@ export const AuthProvider = ({children}) => {
         setIsLoading(false);
         };
 
+        const setName = async (newName) => {
+          try {
+            const updatedProfile = { ...userProfile, name: newName };
+            setUserProfile(updatedProfile);
+            await AsyncStorage.setItem('userProfile', JSON.stringify(updatedProfile));
+          } catch (e) {
+            console.error("Failed to update name", e);
+          }
+        };
+
+        const markTaskDone = async (taskName, done) => {
+          try {
+            const updated = { ...taskCompletion, [taskName]: done };
+            setTaskCompletion(updated);
+            await AsyncStorage.setItem('taskCompletion', JSON.stringify(updated));
+          } catch (e) {
+            console.error("Failed to save task completion", e);
+          }
+        };
+        
+        const loadTaskCompletion = async () => {
+          try {
+            const data = await AsyncStorage.getItem('taskCompletion');
+            if (data) {
+              setTaskCompletion(JSON.parse(data));
+            }
+          } catch (e) {
+            console.error("Failed to load task completion", e);
+          }
+        };
+
         useEffect(() => {
-        checkLoginStatus();
+          checkLoginStatus();
+          loadTaskCompletion();
         }, []);
+        
 
     return (
-        <AuthContext.Provider value={{signIn, logout, isLoading, userToken, userProfile}}>
+        <AuthContext.Provider value={{signIn, logout, isLoading, userToken, userProfile, showNameInput, setName, taskCompletion, markTaskDone, setShowNameInput}}>
         {children}
         </AuthContext.Provider>
     );
