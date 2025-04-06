@@ -14,7 +14,7 @@ Frameworks:
 
 
 ## 📜 Documentation
-Please view our DevPost for more project details [here]()! <br>
+Please view our DevPost for more project details [here](https://devpost.com/software/ecopet-41f6ms)! <br>
 Here is the [Figma](https://www.figma.com/design/A4zJTRaAtsq5UDA8iMZ38z/ScarletHacks2025?node-id=9-54&t=bJDsrLboMgCFyKLv-1) Design!
 ```
 /

@@ -9,7 +9,7 @@ const blurhash = require("../assets/images/buddy/clear.webp");
 
 export default function LeaderboardProfile(props:{person:ProfileObject}) {
     return (
-        <SafeAreaView style={[styles.layout, {padding: 20}]}>
+        <SafeAreaView style={[styles.layout, {padding: 20, width: 350}]}>
             <View style={[styles.compactLayout, {justifyContent: "flex-start", gap: 10}]}>
                 {/* Rank */}
                 <Text style={{fontSize: 10, fontWeight: 900}}>{props.person.rank}</Text>
@@ -17,7 +17,7 @@ export default function LeaderboardProfile(props:{person:ProfileObject}) {
                 {/* Image */}
                 <Image
                     style={{height: 55, width: 55, borderRadius: 55/2}}
-                    source={require("../assets/images/buddy/scrimblo.gif")}
+                    source={props.person.pfp}
                     placeholder={blurhash}
                     contentFit="contain"
                     transition={1000}

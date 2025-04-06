@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from 'react';
-import { StyleSheet, View, Button, Text, SafeAreaView, TextInput } from "react-native";
+import { View, Button, Text, SafeAreaView, TextInput } from "react-native";
+import { Image } from 'expo-image';
 import { Link, useRouter } from 'expo-router';
 import styles from './Style.js';
 
@@ -24,6 +25,15 @@ export default function Login() {
 
   return (
     <SafeAreaView style={styles.landing}>
+      <Image
+          style={[styles.image, {height: 200, width: 200, borderRadius: 20}]}
+          source={require("../assets/images/ecopet.webp")}
+          placeholder={require("../assets/images/ecopet.webp")}
+          contentFit="cover"
+          transition={1000}
+          alt="EcoPet"
+      />
+
         <View style={styles.loginBox}>
             <Text style={{color:'#3B2828', fontSize: 30, fontWeight: 800, textAlign: 'center', }}>Log In</Text>
             <TextInput style={styles.usernameBox} placeholder = "Username" value={username} onChangeText={setUsername} placeholderTextColor={"#3B2828"} />

@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, SafeAreaView, Button } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { View, SafeAreaView, Button } from "react-native";
+import { Link } from 'expo-router';
 
 import HomeIcon from '../assets/images/homeIcon';
 import EcoPetIcon from '../assets/images/ecopet';

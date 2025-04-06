@@ -15,6 +15,7 @@ export default StyleSheet.create({
         margin: 20,
         marginLeft: 5,
         minWidth: 350,
+        maxWidth: 400,
         width: "75%",
         padding: 20,
         color: '#3B2828'

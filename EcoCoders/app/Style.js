@@ -14,8 +14,8 @@ export default StyleSheet.create({
     },
 
     layout: {
-        paddingTop: 150,
-        paddingBottom: 150,
+        paddingTop: 100,
+        paddingBottom: 125,
         display: 'flex',
         gap: 20,
         alignItems: "center",

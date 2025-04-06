@@ -12,7 +12,7 @@ export default function Header( headerTitle:{name:string} ) {
   return (
     <SafeAreaView style={styles.layout}>
         <View>
-            <Link href="http://maps.google.com/">
+            <Link href="http://maps.google.com/" target={"_blank"}>
                 <LocationIcon />
             </Link>
         </View>

@@ -15,6 +15,7 @@ const blurhash = require("../assets/images/buddy/clear.webp");
 
 export interface ProfileObject {
     name: string,
+    pfp: string,
     exp: number,
     tag: string,
     rank: number
@@ -22,6 +23,7 @@ export interface ProfileObject {
 
 const abyssaldragonz : ProfileObject = {
     name: "Josephine Lee",
+    pfp: require("../assets/images/buddy/scrimblo.gif"),
     exp: 2150,
     tag: "abyssaldragonz",
     rank: 1
@@ -29,6 +31,7 @@ const abyssaldragonz : ProfileObject = {
 
 const saxelsson : ProfileObject = {
     name: "Sagha Axelsson",
+    pfp: require("../assets/images/buddy/scrunkle.gif"),
     exp: 1200,
     tag: "saxelsson",
     rank: 2
@@ -36,6 +39,7 @@ const saxelsson : ProfileObject = {
 
 const toppi : ProfileObject = {
     name: "Christopher Harrison",
+    pfp: require("../assets/images/buddy/scrunkly.gif"),
     exp: 1000,
     tag: "ToppiTheThinker",
     rank: 3

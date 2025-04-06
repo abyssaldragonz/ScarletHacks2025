@@ -9,7 +9,7 @@ export default function GoalBox(props:{goal:GoalObject}) {
     const openPopup = () => setCount(taskOpened => taskOpened * -1);
 
     return (
-        <TouchableOpacity onPress={openPopup}>{/* Every time we press on the task, it expands it */}
+        <TouchableOpacity onPress={openPopup} style={{width: '0%'}}>{/* Every time we press on the task, it expands it */}
             <SafeAreaView style={styles.layout}>
                 <View style={styles.textRow}>
                     <Text style={styles.header}>{props.goal.name}</Text>
@@ -18,7 +18,7 @@ export default function GoalBox(props:{goal:GoalObject}) {
 
                 {/* Open the task when the state is set to one */}
                 {(taskOpened == 1) &&
-                    <Text style={{alignSelf: 'flex-start'}}>
+                    <Text style={{alignSelf: 'flex-start', paddingLeft: 10}}>
                         {props.goal.description}
                     </Text>
                 }

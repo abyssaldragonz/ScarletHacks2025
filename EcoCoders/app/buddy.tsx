@@ -36,7 +36,7 @@ function pageReload(event: Event) {
 export default function Buddy(bud : BuddyProfile) {
     bud = placeholderBuddy;
     
-    const [hatType, setHat] = useState(require("../assets/images/buddy/bow.webp"));
+    const [hatType, setHat] = useState(require("../assets/images/buddy/dapper.webp"));
     const changeHat = (newHat:string) => setHat((hatType:string) => newHat);
     bud.hat = hatType;
 
