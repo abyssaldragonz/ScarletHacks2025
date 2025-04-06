@@ -4,8 +4,8 @@ import Svg, { Path } from "react-native-svg"
 export default function EcoPet() {
   return (
     <Svg
-      width={400}
-      height={400}
+      width={100}
+      height={100}
       viewBox="0, 0, 400,400"
     >
       <Path
