@@ -99,7 +99,8 @@ export default StyleSheet.create({
         height: 40,
         borderRadius: 15,
         textAlign: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignContent: 'center'
     },
 
     // Home Page

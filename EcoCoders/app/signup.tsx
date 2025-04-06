@@ -48,12 +48,12 @@ export default function Signup() {
 
   return (
     <SafeAreaView style={styles.landing}>
-      <Link href="/" style={styles.link}>
-        Go to Index screen
+      <Link href="/" style={[styles.loginButton, {padding: 10}]}>
+        Log In
       </Link>
 
       <View style={styles.loginBox}>
-        <Text style={{ fontSize: 30, fontWeight: 800, textAlign: 'center', marginTop: 60, marginBottom: 10 }}>
+        <Text style={{ fontSize: 30, fontWeight: 800, textAlign: 'center' }}>
           Sign Up
         </Text>
 

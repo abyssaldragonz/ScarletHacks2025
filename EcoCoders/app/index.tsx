@@ -24,12 +24,8 @@ export default function Login() {
 
   return (
     <SafeAreaView style={styles.landing}>
-        <Link href="/" style={styles.link}>
-            Go to Index screen
-        </Link>
-
         <View style={styles.loginBox}>
-            <Text style={{color:'#3B2828', fontSize: 30, fontWeight: 800, textAlign: 'center', marginTop: 60, marginBottom: 10}}>Log In</Text>
+            <Text style={{color:'#3B2828', fontSize: 30, fontWeight: 800, textAlign: 'center', }}>Log In</Text>
             <TextInput style={styles.usernameBox} placeholder = "Username" value={username} onChangeText={setUsername} placeholderTextColor={"#3B2828"} />
             <TextInput style={styles.passwordBox} secureTextEntry={true} placeholder = "Password" value={password} onChangeText={setPassword} placeholderTextColor={"#3B2828"} />
             <View style={styles.loginButton}>
