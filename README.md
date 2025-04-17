@@ -1,6 +1,6 @@
 # ScarletHacks2025
 ## The EcoCoders!
-<sup> Easy Page View Link <a href="https://abyssaldragonz.github.io/ScarletHacks2025/home" target="_blank">here</a>.
+<sup> Easy Page View Link <a href="https://abyssaldragonz.github.io/ScarletHacks2025/" target="_blank">here</a>.
 
 ## 🚀 About
 
